@@ -101,7 +101,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    "mongodb+srv://mayank:Mayank5003@nodemax.ydxc5hi.mongodb.net/messages?retryWrites=true&w=majority"
+    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@nodemax.ydxc5hi.mongodb.net/${process.env.MONGO_DEFAULT_DB}?retryWrites=true&w=majority`
   )
   .then((result) => {
     app.listen(8080);
